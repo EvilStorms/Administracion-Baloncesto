@@ -1,0 +1,47 @@
+﻿<mah:MetroWindow  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="di.repaso._2024.Frontend.Dialogos.DialogoAnyadirJugador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:di.repaso._2024.Frontend.Dialogos"
+        mc:Ignorable="d"
+        Title="DialogoAnyadirJugador" Height="350" Width="800">
+    <StackPanel>
+        <TextBlock Text="AÑADA UN JUGADOR NUEVO" Foreground="White" FontSize="45" TextAlignment="Center" Width="800" Background="#476db6"/>
+        <Grid Height="287">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="25" VerticalAlignment="Center">
+                <TextBlock Text="NOMBRE:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <TextBox x:Name="txtNombre" Style="{StaticResource MahApps.Styles.TextBox.Button}" Text="{Binding equipo.Nombre, NotifyOnValidationError=True,
+                ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="PROCEDENCIA:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <TextBox x:Name="txtProcedencia" Style="{StaticResource MahApps.Styles.TextBox.Button}" Text="{Binding jugador.Procedencia, NotifyOnValidationError=True,
+                ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="POSICION:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <ComboBox x:Name="comboPos" Style="{StaticResource MahApps.Styles.ComboBox}" ItemsSource="{Binding listaPosiciones}" SelectedItem="{Binding jugador.Posicion}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="25" VerticalAlignment="Center">
+                <TextBlock Text="ALTURA:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <TextBox x:Name="txtAltura" Style="{StaticResource MahApps.Styles.TextBox.Button}" Text="{Binding jugador.Altura, NotifyOnValidationError=True,
+                ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="PESO:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <TextBox x:Name="txtPeso" Style="{StaticResource MahApps.Styles.TextBox.Button}" Text="{Binding jugador.Peso, NotifyOnValidationError=True,
+                ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="EQUIPO:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <ComboBox x:Name="comboEquipo" Style="{StaticResource MahApps.Styles.ComboBox}" ItemsSource="{Binding listaEquipos}" SelectedItem="{Binding jugador.Equipo}" DisplayMemberPath="Nombre"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Height="40">
+                <Button x:Name="btnGuardar" Content="GUARDAR" Background="#476db6" Width="100" Height="35" Margin="30,0,0,0" Click="btnGuardar_Click"/>
+                <Button x:Name="btnCancelar" Content="CANCELAR" Background="#476db6" Width="100" Height="35" Margin="45,0,0,0" Click="btnCancelar_Click"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</mah:MetroWindow>

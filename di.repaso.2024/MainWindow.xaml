@@ -1,0 +1,68 @@
+﻿<Window x:Class="di.repaso._2024.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:di.repaso._2024"
+        mc:Ignorable="d"
+        Title="MainWindow" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" Height="600" Width="1000">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Background="#302f41" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/Recursos/Iconos/pelota.png" Width="30"/>
+                    <TextBlock Text="APP-BASKET" VerticalAlignment="Center" Foreground="White" Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Source="/Recursos/Iconos/usuario.png" Width="20" Margin="0,0,5,0"/>
+                    <TextBlock Text="ADMIN" VerticalAlignment="Center" Foreground="White" Margin="5"/>
+                    <Button x:Name="btnCerrar" Background="Transparent" BorderBrush="Transparent" Click="btnCerrar_Click">
+                        <Image Source="/Recursos/Iconos/cerrar.png" Width="20" Margin="5"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Background="#476db6" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="EQUIPOS" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+                        <StackPanel Orientation="Horizontal" Margin="5,0,0,10">
+                            <Button x:Name="btnAnyadirEquipo" Background="Transparent" Margin="0,0,10,0" Click="btnAnyadirEquipo_Click">
+                                <Image Source="/Recursos/Iconos/addequipo.png" Width="25"/>
+                            </Button>
+                            <Button x:Name="listaEquipos" Background="Transparent" Margin="0,0,10,0" Click="listaEquipos_Click">
+                                <Image Source="/Recursos/Iconos/listaequipo.png" Width="25"/>
+                            </Button>
+                            <Button Background="Transparent">
+                                <Image Source="/Recursos/Iconos/arbolequipo.png" Width="25"/>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <Rectangle Fill="White" Width="1" Height="90" Margin="15,0,15,0"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center" Text="JUGADORES" Foreground="White" Margin="0,10,0,10"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Button  x:Name="anyadirJugador" Background="Transparent" Margin="0,0,10,0" Click="anyadirJugador_Click">
+                                <Image Source="/Recursos/Iconos/addjugador.png" Width="25"/>
+                            </Button>
+                            <Button Background="Transparent" Margin="0,0,10,0">
+                                <Image Source="/Recursos/Iconos/listajugador.png" Width="25"/>
+                            </Button>
+                            <Button Background="Transparent">
+                                <Image Source="/Recursos/Iconos/arboljugador.png" Width="25"/>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <Rectangle Fill="White" Width="1" Height="90" Margin="15,0,15,0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid x:Name="gridCentral">
+            
+        </Grid>
+    </DockPanel>
+</Window>

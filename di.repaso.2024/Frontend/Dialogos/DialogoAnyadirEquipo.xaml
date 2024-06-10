@@ -1,0 +1,43 @@
+﻿<mah:MetroWindow x:Class="di.repaso._2024.Frontend.Dialogos.DialogoAnyadirEquipo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:di.repaso._2024.Frontend.Dialogos"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="DialogoAnyadirEquipo" Height="400" Width="600">
+    <StackPanel>
+        <TextBlock Text="AÑADA UN EQUIPO NUEVO" Foreground="White" FontSize="45" TextAlignment="Center" Width="600" Background="#476db6"/>
+        <Grid Height="287">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="25" VerticalAlignment="Center">
+                <TextBlock Text="NOMBRE:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <TextBox x:Name="txtNombre" Style="{StaticResource MahApps.Styles.TextBox.Button}" Text="{Binding Equipo.Nombre, NotifyOnValidationError=True,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="CIUDAD:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <TextBox x:Name="txtCiudad" Style="{StaticResource MahApps.Styles.TextBox.Button}" Text="{Binding Equipo.Ciudad, NotifyOnValidationError=True,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="25" VerticalAlignment="Center">
+                <TextBlock Text="CONFERENCIA:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <ComboBox x:Name="txtconferencia" Style="{StaticResource MahApps.Styles.ComboBox}" ItemsSource="{Binding listaConferencias}" SelectedItem="{Binding Equipo.Conferencia, NotifyOnValidationError=True,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="DIVISIÓN:" Margin="0,0,0,10" Foreground="#476db6" FontWeight="Bold"/>
+                <ComboBox x:Name="txtDivision" Style="{StaticResource MahApps.Styles.ComboBox}" ItemsSource="{Binding listaDivisiones}" SelectedItem="{Binding Equipo.Division, NotifyOnValidationError=True,
+                    ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Height="40">
+                <Button x:Name="btnGuardar" Content="GUARDAR" Background="#476db6" Width="100" Height="35" Margin="30,0,0,0" Click="btnGuardar_Click"/>
+                <Button x:Name="btnCancelar" Content="CANCELAR" Background="#476db6" Width="100" Height="35" Margin="45,0,0,0" Click="btnCancelar_Click"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</mah:MetroWindow>
